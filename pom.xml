@@ -10,12 +10,13 @@
 	</parent>
 	<groupId>com.niyaz.info.messages</groupId>
 	<artifactId>niyaz-info-messages</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>@{messages.version}</version>
 	<name>niyaz-info-messages</name>
 	<description>Messages project for niyaz.info</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<messages.version>0.0.1-SNAPSHOT</messages.version>
 	</properties>
 
 	<dependencies>
