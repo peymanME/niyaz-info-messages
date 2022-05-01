@@ -32,42 +32,43 @@ public class MessageComponent {
     }
 
     /**
-     * @param code
+     *  Get message based on key and locale
+     * @param key
      * @param locale
      * @return String
      */
-    public String get(String code, Locale locale) {
-        return accessor.getMessage(code, locale);
+    public String get(String key, Locale locale) {
+        return accessor.getMessage(key, locale);
     }
 
     /**
      *
-     * @param code
+     * @param key
      * @param args
      * @param locale
      * @return String
      */
-    public String get(String code, Object[] args, Locale locale) {
-        return accessor.getMessage(code, args, locale);
+    public String get(String key, Object[] args, Locale locale) {
+        return accessor.getMessage(key, args, locale);
     }
 
     /**
      *
-     * @param code
+     * @param key
      * @param locale
      * @param codeArgs
      * @return String
      */
-    public String get(String code, Locale locale, Object... codeArgs) {
+    public String get(String key, Locale locale, Object... codeArgs) {
         if (codeArgs.length == 0){
-            return get(code, locale);
+            return get(key, locale);
         }
         List<Object> objects = new ArrayList<>();
         Arrays.stream(codeArgs).forEach(codeArg -> objects.add(get((String)codeArg, locale)));
 
         if (objects.size()>0){
-            return get(code, objects.toArray(new Object[0]), locale);
+            return get(key, objects.toArray(new Object[0]), locale);
         }
-        return code;
+        return key;
     }
 }

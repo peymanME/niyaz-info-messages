@@ -65,16 +65,6 @@ public class MessageComponentTest {
             region = _region;
         }
 
-
-        public String getLanguage(){
-            return language;
-        }
-
-        public String getRegion(){
-            return region;
-        }
-
-
     }
 
     private Locale getLocale(LOCALIZATION localization){
@@ -96,6 +86,25 @@ public class MessageComponentTest {
     public void check_simple_message_PL() {
         String message = messageComponent.get("application.test.simple", getLocale(LOCALIZATION.PL));
         Assert.assertEquals("To jest proste", message);
+    }
+
+    @Test
+    public void check_message_with_arg_message_EN() {
+        Object[] args ={"an example"};
+        String message = messageComponent.get("application.test.with.arg", args, getLocale(LOCALIZATION.US));
+        Assert.assertEquals("Please let me an example", message);
+    }
+    @Test
+    public void check_message_with_arg_message_PL() {
+        Object[] args ={"przykład"};
+        String message = messageComponent.get("application.test.with.arg", args, getLocale(LOCALIZATION.PL));
+        Assert.assertEquals("Proszę dać mi przykład", message);
+    }
+    @Test
+    public void check_message_with_arg_message_FA() {
+        Object[] args ={"یک مثال"};
+        String message = messageComponent.get("application.test.with.arg", args, getLocale(LOCALIZATION.FA));
+        Assert.assertEquals("اجازه دهید یک مثال بزنم", message);
     }
 
 }
