@@ -33,7 +33,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/niyaz-info/niyaz-info-messages</url>
+			<url>https://maven.pkg.github.com/peymanME/niyaz-info-messages</url>
 		</repository>
 	</distributionManagement>
 </project>
