@@ -107,4 +107,22 @@ public class MessageComponentTest {
         Assert.assertEquals("اجازه دهید یک مثال بزنم", message);
     }
 
+    private String check_message_with_arg_and_func (LOCALIZATION localization){
+        Object[] args ={"application.test.with.func1"};
+        return messageComponent.get("application.test.with.func", getLocale(localization), args);
+
+    }
+    @Test
+    public void check_message_with_arg_and_func_EN() {
+        Assert.assertEquals("Error in value: The value is not valid", check_message_with_arg_and_func(LOCALIZATION.US));
+    }
+    @Test
+    public void check_message_with_arg_message_with_func_FA() {
+        Assert.assertEquals("خطا در مقدار : مقدار نامعتبر است", check_message_with_arg_and_func(LOCALIZATION.FA));
+    }
+    @Test
+    public void check_message_with_arg_message_with_func_PL() {
+        Assert.assertEquals("Błąd w wartości: Wartość jest nieprawidłowa", check_message_with_arg_and_func(LOCALIZATION.PL));
+    }
+
 }
