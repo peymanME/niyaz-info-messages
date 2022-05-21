@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.niyaz.info.messages</groupId>
 	<artifactId>niyaz-info-messages</artifactId>
-	<version>1.0.0</version>
+	<version>2022.0.0-messages</version>
 	<name>niyaz-info-messages</name>
 	<description>Messages project for niyaz.info</description>
 
